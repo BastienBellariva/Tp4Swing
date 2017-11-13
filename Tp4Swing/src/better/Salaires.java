@@ -2,11 +2,14 @@ package better;
 
 import better.domain.*;
 import better.service.Personnel;
+import better.view.ViewController;
+
+import static javax.swing.SwingUtilities.invokeLater;
 
 public class Salaires {
     public static void main(String[] args) {
 
-        Personnel p = new Personnel();
+        /*Personnel p = new Personnel();
 
         p.ajouterEmploye(new Vendeur("Pierre", "Business", 45, "1995", 30000));
         p.ajouterEmploye(new Representant("Léon", "Vendtout", 25, "2001", 20000));
@@ -19,6 +22,8 @@ public class Salaires {
         System.out.println(String.format(
                 "Le salaire moyen dans l'entreprise est de %.2f francs.",
                 p.salaireMoyen()
-        ));
+        ));*/
+
+        invokeLater(ViewController::viewController);
     }
 }
