@@ -1,5 +1,7 @@
 package better.view;
 
+import better.service.Personnel;
+
 import javax.swing.*;
 
 public class VisuEmployee extends JPanel
@@ -14,16 +16,15 @@ public class VisuEmployee extends JPanel
         super();
         this.viewController = viewController;
 
-        visuTable = new JTable(new Object[][]
-        {
-                {"Arthur", "Daniel", "10", "Etudiant", "2000"}
+        BoxLayout boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
+        setLayout(boxLayout);
 
-        }, new java.lang.String[]{"Nom", "Prénom", "Age", "Profession", "Salaire"});
+        visuTable = new JTable(Personnel.getInstance().salaryArray(), new java.lang.String[]{"Nom", "Prénom", "Age", "Profession", "Salaire"});
 
-        btnBackToMenu = new JButton("backMenu");
+        btnBackToMenu = new JButton("Retour Menu");
 
-        add(visuTable);
         add(btnBackToMenu);
+        add(visuTable);
 
         btnBackToMenu.addActionListener(viewController::displayMenu);
     }

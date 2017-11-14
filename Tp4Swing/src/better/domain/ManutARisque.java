@@ -2,7 +2,7 @@ package better.domain;
 
 public class ManutARisque extends Manutentionnaire implements ARisque {
 
-    public ManutARisque(String firstname, String lastname, int age, String entryYear, int base) {
+    public ManutARisque(String firstname, String lastname, String age, String entryYear, int base) {
         super(firstname, lastname, age, entryYear, base);
     }
 

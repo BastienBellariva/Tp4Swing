@@ -13,11 +13,12 @@ public class HomeView extends JPanel
     {
         super();
         this.viewController = viewController;
-        btnVisualiser = new JButton("Vis");
-        btnAjouter = new JButton("Ajout");
+        btnVisualiser = new JButton("Visualiser");
+        btnAjouter = new JButton("Ajouter");
         add(btnAjouter);
         add(btnVisualiser);
 
+        //Actions button on click
         btnAjouter.addActionListener(viewController::displayAdd);
         btnVisualiser.addActionListener(viewController::displayVisu);
     }

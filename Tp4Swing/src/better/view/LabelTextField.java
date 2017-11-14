@@ -19,4 +19,9 @@ public class LabelTextField extends JPanel
         setMaximumSize(new Dimension(200, 20));
         add(textField);
     }
+
+    public String getValue()
+    {
+        return textField.getText();
+    }
 }

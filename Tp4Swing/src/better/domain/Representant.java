@@ -2,7 +2,7 @@ package better.domain;
 
 public class Representant extends Seller {
 
-    public Representant(String firstname, String lastname, int age, String entryYear, double turnover) {
+    public Representant(String firstname, String lastname, String age, String entryYear, double turnover) {
         super(firstname, lastname, age, entryYear, turnover);
     }
 
