@@ -1,3 +1,11 @@
+/*
+*
+* This class :
+* - permit to generate text field with label
+* - is a good solution to not writing a lot of line only for a form.
+*
+ */
+
 package better.view;
 
 import javax.swing.*;
@@ -10,7 +18,7 @@ public class LabelTextField extends JPanel
 
     public LabelTextField(String myLabel)
     {
-        setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        setLayout(new BoxLayout(this, BoxLayout.X_AXIS));//Permit to return in the line for all new text field
 
         label = new JLabel(myLabel);
         add(label);
@@ -20,6 +28,7 @@ public class LabelTextField extends JPanel
         add(textField);
     }
 
+    //Essential for using value in text field
     public String getValue()
     {
         return textField.getText();

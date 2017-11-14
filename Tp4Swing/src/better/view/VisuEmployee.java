@@ -1,3 +1,10 @@
+/*
+*
+* This class :
+* - permit to visualise all employee save in array
+*
+ */
+
 package better.view;
 
 import better.service.Personnel;
@@ -19,6 +26,7 @@ public class VisuEmployee extends JPanel
         BoxLayout boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
         setLayout(boxLayout);
 
+        //Taking array implement in class "service/Personnel.java"
         visuTable = new JTable(Personnel.getInstance().salaryArray(), new java.lang.String[]{"Nom", "Prénom", "Age", "Profession", "Salaire"});
 
         btnBackToMenu = new JButton("Retour Menu");
@@ -26,6 +34,6 @@ public class VisuEmployee extends JPanel
         add(btnBackToMenu);
         add(visuTable);
 
-        btnBackToMenu.addActionListener(viewController::displayMenu);
+        btnBackToMenu.addActionListener(viewController::displayMenu); //Return to menu
     }
 }

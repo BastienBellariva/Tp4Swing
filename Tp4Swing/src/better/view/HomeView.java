@@ -1,3 +1,12 @@
+/*
+*
+* This class :
+* - is the first view when application start
+* - permit to switch in other view
+* - is a simple menu
+*
+ */
+
 package better.view;
 
 import javax.swing.*;
@@ -9,6 +18,7 @@ public class HomeView extends JPanel
     private JButton btnVisualiser;
     private JButton btnAjouter;
 
+    //Initialize 2 buttons for switch on different views
     public HomeView(ViewController viewController)
     {
         super();

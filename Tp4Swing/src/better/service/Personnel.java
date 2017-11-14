@@ -19,6 +19,7 @@ public class Personnel {
         this.employees.add(employee);
     }
 
+    //Permit to transmit array to view/VisuEmployee
     public Object[][] salaryArray()
     {
         Object[][] salAr = new Object[100][6];
@@ -45,6 +46,8 @@ public class Personnel {
         return total / employees.size();
     }
 
+    //Instance for use array of Personnel on all application
+    //Possibly not the best thing but I didn't have a better idea...
     public static Personnel getInstance()
     {
         if (instance == null)

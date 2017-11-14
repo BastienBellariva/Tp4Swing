@@ -1,3 +1,12 @@
+/*
+*
+* This class :
+* - permit to create employee
+* - manage the form for insert employee in array
+* - is the view for add employee
+*
+*/
+
 package better.view;
 
 import better.domain.*;
@@ -22,9 +31,7 @@ public class AddEmployee extends JPanel
     private JButton btnCancel;
     private JButton btnAddEmployee;
 
-    private Personnel p;
-
-    //Assemblage et mise en forme
+    //Assembly and formatting
     public AddEmployee(ViewController viewController)
     {
         super();
@@ -61,19 +68,22 @@ public class AddEmployee extends JPanel
         add(btnAddEmployee);
 
         //Actions button on click
-        btnCancel.addActionListener(viewController::displayMenu);
-        btnAddEmployee.addActionListener(e -> insertEmployeeInArray());
-        btnAddEmployee.addActionListener(viewController::displayAdd);
+        btnCancel.addActionListener(viewController::displayMenu); //Return to menu
+        btnAddEmployee.addActionListener(e -> insertEmployeeInArray()); //Insert informations in array's employee
+        btnAddEmployee.addActionListener(viewController::displayAdd); //Refresh panel add employee
     }
 
+    //Add employee in array
     private void insertEmployeeInArray()
     {
+        //Recovery of values
         String valueFirstName = firstName.getValue();
         String valueLastName = lastName.getValue();
         String valueAge = age.getValue();
         String valueEnterDate = enterDate.getValue();
         String valueSalaryParam = salaryParam.getValue();
 
+        //Switch for select the right constructor (not the best method but it's work)
         switch (comboType.getSelectedItem().toString())
         {
             case "Vendeur":
@@ -98,10 +108,10 @@ public class AddEmployee extends JPanel
         }
     }
 
-    //Méthode pour implémenter le comboBox "Type d'employé"
+    //Implement ComboBox for form
     private void comboTypeEmployee()
     {
-        //Déclaration et initialisation du comboBox
+        //Declaration and initializing comboBox
         comboType = new JComboBox();
         comboType.addItem("Vendeur");
         comboType.addItem("Répresentant");
@@ -110,9 +120,9 @@ public class AddEmployee extends JPanel
         comboType.addItem("Technicien à risque");
         comboType.setMaximumSize(new Dimension(200,20));
 
-        labelType = new JLabel("Type d'employé"); //Déclaration du label
+        labelType = new JLabel("Type d'employé"); //Label declaration
 
-        //Affichage
+        //Viewing
         this.add(labelType);
         this.add(comboType);
     }
